@@ -1,0 +1,31 @@
+{
+  "name": "jun25-t2w2-backend-js-intro",
+  "version": "1.0.0",
+  "description": "Intro lesson on Node and Express JS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js ",
+    "dev": "node --watch src/server.js",
+    "start:dev": "nodemon src/index.js",
+    "start_prod": "node src/index.js",
+    "power_script": "node src/server.js && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/APaud3l/jun25-t2w2-backend-js-intro.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/APaud3l/jun25-t2w2-backend-js-intro/issues"
+  },
+  "homepage": "https://github.com/APaud3l/jun25-t2w2-backend-js-intro#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
