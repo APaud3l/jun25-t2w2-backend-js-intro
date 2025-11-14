@@ -6,6 +6,12 @@ const express = require('express');
 // Define the instance of Express server
 const app = express();
 
+// Use the express.json() middleware to parse incoming JSON body data
+app.use(express.json());
+
+// Useful for HTML Forms (POST/PUT/PATCH)
+app.use(express.urlencoded({ extended: true }));
+
 // Define the port number
 const port = 3000;
 
@@ -43,7 +49,20 @@ app.get('/profile', (request, response) => {
     });
 });
 
+// POST route
+app.post('/add-user', (reqest, response) => {
+    // Get the details from the front-end, request body
+    const { name, age } = reqest.body;
 
+    // Another way of unpacking the request body data
+    // const name = request.body.name;
+    // const age = request.body.age;
+
+    // Simulate storing the new user to the DB
+    response.status(201).json({
+        "message": `Added ${name} user successfully!`
+    });
+});
 
 // Configure the server to listen to the specified port
 app.listen(port, () => {
