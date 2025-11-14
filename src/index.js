@@ -1,4 +1,4 @@
-console.log("Hello from backends!!");
+console.log("Hello from backend!!");
 
 // Import the package
 const express = require('express');
@@ -11,9 +11,6 @@ app.use(express.json());
 
 // Useful for HTML Forms (POST/PUT/PATCH)
 app.use(express.urlencoded({ extended: true }));
-
-// Define the port number
-const port = 3000;
 
 app.get('/', (request, response) => {
     response.json({
@@ -64,7 +61,6 @@ app.post('/add-user', (reqest, response) => {
     });
 });
 
-// Configure the server to listen to the specified port
-app.listen(port, () => {
-    console.log("Example EXpress server started on port: ", port);
-});
+// Export the app instace to server.js
+module.exports = { app };
+// module.exports = app ;
