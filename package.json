@@ -2,13 +2,13 @@
   "name": "jun25-t2w2-backend-js-intro",
   "version": "1.0.0",
   "description": "Intro lesson on Node and Express JS",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js ",
-    "dev": "node --watch src/server.js",
+    "dev": "node --watch src/index.js",
     "start:dev": "nodemon src/index.js",
     "start_prod": "node src/index.js",
-    "power_script": "node src/server.js && npm start"
+    "power_script": "node src/index.js && npm start"
   },
   "repository": {
     "type": "git",
