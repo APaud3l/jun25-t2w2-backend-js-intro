@@ -10,7 +10,8 @@
     "start_prod": "node src/server.js",
     "power_script": "node src/server.js && npm start",
     "db:connect": "node utils/database.js",
-    "db:seed": "node scripts/seed.js"
+    "db:seed": "node scripts/seed.js",
+    "db:drop": "node scripts/drop.js"
   },
   "repository": {
     "type": "git",
