@@ -65,5 +65,42 @@ router.post('/', async (request, response) => {
     });
 });
 
+// PATCH /pokemonRoutes/id/:id
+router.patch('/id/:id', async (request, response) => {
+    // Find by ID and update
+    try{
+        const poke = await Pokemon.findByIdAndUpdate(
+            request.params.id,
+            request.body,
+            { new: true } // If you want to see the updated value from the start, in return
+        );
+
+        // If doesn't exist
+        if (!poke) return response.status(404).json({error: "Pokemon not found!"});
+            //  return acknowledgement
+        
+        // Return updated values
+        response.json({
+            message: "Pokemon data updated successfully.",
+            updatedData: poke
+        });
+    } catch (error) {
+        response.status(400).json({
+            message: "There was an error.",
+            error: error
+        });
+    }
+});
+
+// DELETE /pokemonRoutes/id/:id
+router.delete('/id/:id', async (request, response) => {
+    // Find by ID and remove
+    const deletedPoke = await Pokemon.findByIdAndDelete(request.params.id);
+    response.json({
+        message: "Pokemon deleted succesfully.",
+        deletedData: deletedPoke 
+    });
+});
+
 // module.exports = {router};
 module.exports = router;
