@@ -3,6 +3,7 @@ const express = require('express');
 
 // Call the model for which the routes are being created
 const { Pokemon } = require('../models/pokemon');
+const { Trainer } = require('../models/trainer');
 
 //  Define the router to start creating/defining routes
 const router = express.Router();
@@ -11,7 +12,11 @@ const router = express.Router();
 
 // GET /pokemonRoutes/
 router.get('/', async (request, response) => {
-    const poke = await Pokemon.find();
+    // Find all pokemons
+    // const poke = await Pokemon.find();
+
+    // Find all pokemons and include trainer details
+    const poke = await Pokemon.findOne({name: 'Pikachu'}).populate('trainers').exec();
     response.json({
         message: "Successfully fetched the pokemons",
         data: poke

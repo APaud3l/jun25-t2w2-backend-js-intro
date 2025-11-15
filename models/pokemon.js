@@ -16,6 +16,10 @@ const pokemonSchema = new mongoose.Schema({
         default: 5,
         min: 1,
         max: 99
+    },
+    trainer: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Trainer'
     }
 });
 
