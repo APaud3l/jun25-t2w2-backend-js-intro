@@ -19,5 +19,10 @@ async function disconnectDB() {
     console.log("Database disconnected!!");
 }
 
-connectDB();
-disconnectDB();
+// connectDB();
+// disconnectDB();
+
+module.exports = {
+    connectDB,
+    disconnectDB
+};
