@@ -3,6 +3,10 @@ console.log("Hello from backend!!");
 // Import the package
 const express = require('express');
 
+// Import the Pokemon router
+// const {router: pokemonRoutes}  = require('../routes/pokemonRoutes');
+const pokemonRoutes  = require('../routes/pokemonRoutes');
+
 // Define the instance of Express server
 const app = express();
 
@@ -11,6 +15,8 @@ app.use(express.json());
 
 // Useful for HTML Forms (POST/PUT/PATCH)
 app.use(express.urlencoded({ extended: true }));
+
+app.use('/pokemonRoutes', pokemonRoutes);
 
 app.get('/', (request, response) => {
     response.json({
