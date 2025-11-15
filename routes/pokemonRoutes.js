@@ -16,7 +16,7 @@ router.get('/', async (request, response) => {
     // const poke = await Pokemon.find();
 
     // Find all pokemons and include trainer details
-    const poke = await Pokemon.findOne({name: 'Pikachu'}).populate('trainers').exec();
+    const poke = await Pokemon.find().populate('trainer');
     response.json({
         message: "Successfully fetched the pokemons",
         data: poke
