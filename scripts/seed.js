@@ -20,6 +20,11 @@ async function run(){
 
     const pika = await Pokemon.create({
         name: 'Pikachu',
+        description: {
+            en: 'An Electric-type Pokemon',
+            fr: 'Translated to French',
+            ja: 'Translated to Japanese'
+        },
         type: 'electric',
         level: 10,
         trainer: ash._id
